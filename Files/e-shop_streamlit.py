@@ -20,13 +20,9 @@ from sklearn.model_selection import train_test_split
 
 # Charge le modèle enregistré et test à partir du fichier chargé
 
-with open('fl.pkl', 'rb') as f: # 'r' for reading; can be omitted
-    mydict = pickle.load(f)         # load file content as mydict
-    f.close()                       
-    # test = np.array([6.7, 3.1, 5.6, 2.4])
-    # test = test.reshape(1, -1)
-    print(mydict)
-    # mydict["model"].predict(mydict["stand"].transform(test))
+import cloudpickle as cp
+from urllib.request import urlopen
+mydict = cp.load(urlopen("https://github.com/Dimitri-J/Social_Network_Brief/raw/main/Files/fl.pkl")) 
 
 
 # Déclaration de variable formulaire
@@ -73,12 +69,12 @@ with col1:
 with col2:
     st.header("Age")
     age = st.slider("Indiquer l'âge", key=age, min_value = 18, max_value = 130, value = 25)
-    st.write('The current number is ', age)
+    st.write('The current number is ', age, 'ans')
 
 with col3:
     st.header("Salaire")
-    salaire = st.number_input('Indiquer le salaire potentiel', key=salaire, step = 1)
-    st.write('Le salaire potentiel est de ', salaire)
+    salaire = st.number_input('Indiquer le salaire potentiel', key=salaire,value = 10, min_value=10, step = 1)
+    st.write('Le salaire potentiel est de ', salaire, 'k €')
 
 
 if st.button("Estimation d'achat"):
