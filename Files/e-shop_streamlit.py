@@ -79,16 +79,6 @@ with col3:
 
 if st.button("Estimation d'achat"):
     import time
-    html_string = """
-                <audio autoplay>
-                <source src="https://www.orangefreesounds.com/wp-content/uploads/2022/04/Small-bell-ringing-short-sound-effect.mp3" type="audio/mp3">
-                </audio>
-                """
-
-    sound = st.empty()
-    sound.markdown(html_string, unsafe_allow_html=True)  # will display a st.audio with the sound you specified in the "src" of the html_string and autoplay it
-    time.sleep(2)  # wait for 2 seconds to finish the playing of the audio
-    sound.empty()  # optionally delete the element afterwards
     col_b1, col_b2 = st.columns([2,1])
     test = np.array([sex, age, salaire])
     print(test)
@@ -98,5 +88,25 @@ if st.button("Estimation d'achat"):
     print(predic)
     if predic==1 :
         st.metric("Estimation d'achat : ", "Oui",)
+        html_string = """
+                <audio autoplay>
+                <source src="https://www.myinstants.com/media/sounds/donate-sound-here-comes-the-money.mp3" type="audio/mp3">
+                </audio>
+                """
+
+        sound = st.empty()
+        sound.markdown(html_string, unsafe_allow_html=True)  # will display a st.audio with the sound you specified in the "src" of the html_string and autoplay it
+        time.sleep(2)  # wait for 2 seconds to finish the playing of the audio
+        sound.empty()  # optionally delete the element afterwards
     else:
         st.metric("Estimation d'achat : ", "Non",)
+        html_string = """
+                <audio autoplay>
+                <source src="https://www.myinstants.com/media/sounds/engineer_no01_1.mp3" type="audio/mp3">
+                </audio>
+                """
+
+        sound = st.empty()
+        sound.markdown(html_string, unsafe_allow_html=True)  # will display a st.audio with the sound you specified in the "src" of the html_string and autoplay it
+        time.sleep(2)  # wait for 2 seconds to finish the playing of the audio
+        sound.empty()  # optionally delete the element afterwards
