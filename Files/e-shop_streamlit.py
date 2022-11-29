@@ -20,7 +20,7 @@ from sklearn.model_selection import train_test_split
 
 # Charge le modèle enregistré et test à partir du fichier chargé
 
-with open('fl.pkl', 'rb') as f: # 'r' for reading; can be omitted
+with open('https://github.com/Dimitri-J/Social_Network_Brief/raw/main/Files/fl.pkl', 'rb') as f: # 'r' for reading; can be omitted
     mydict = pickle.load(f)         # load file content as mydict
     f.close()                       
     # test = np.array([6.7, 3.1, 5.6, 2.4])
