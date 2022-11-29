@@ -73,12 +73,12 @@ with col1:
 with col2:
     st.header("Age")
     age = st.slider("Indiquer l'âge", key=age, min_value = 18, max_value = 130, value = 25)
-    st.write('The current number is ', age)
+    st.write('The current number is ', age, 'ans')
 
 with col3:
     st.header("Salaire")
-    salaire = st.number_input('Indiquer le salaire potentiel', key=salaire, step = 1)
-    st.write('Le salaire potentiel est de ', salaire)
+    salaire = st.number_input('Indiquer le salaire potentiel', key=salaire,value = 10, min_value=10, step = 1)
+    st.write('Le salaire potentiel est de ', salaire, 'k €')
 
 
 if st.button("Estimation d'achat"):
