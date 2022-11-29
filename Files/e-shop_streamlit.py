@@ -20,13 +20,9 @@ from sklearn.model_selection import train_test_split
 
 # Charge le modèle enregistré et test à partir du fichier chargé
 
-with open('https://github.com/Dimitri-J/Social_Network_Brief/raw/main/Files/fl.pkl', 'rb') as f: # 'r' for reading; can be omitted
-    mydict = pickle.load(f)         # load file content as mydict
-    f.close()                       
-    # test = np.array([6.7, 3.1, 5.6, 2.4])
-    # test = test.reshape(1, -1)
-    print(mydict)
-    # mydict["model"].predict(mydict["stand"].transform(test))
+import cloudpickle as cp
+from urllib.request import urlopen
+mydict = cp.load(urlopen("https://github.com/Dimitri-J/Social_Network_Brief/raw/main/Files/fl.pkl")) 
 
 
 # Déclaration de variable formulaire
